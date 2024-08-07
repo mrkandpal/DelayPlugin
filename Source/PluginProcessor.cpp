@@ -141,6 +141,7 @@ void DelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
     // This is here to avoid people getting screaming feedback
     // when they first compile a plugin, but obviously you don't need to keep
     // this code if your algorithm always overwrites all the output channels.
+    
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
@@ -150,11 +151,19 @@ void DelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
+    
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
-        auto* channelData = buffer.getWritePointer (channel);
-
-        // ..do something to the data...
+        //Use built-in method to apply gain
+        //buffer.applyGain(0.5f);
+        
+        //Apply gain manually
+        auto* channelData = buffer.getWritePointer(channel);
+        
+        for(int sample = 0; sample< buffer.getNumSamples(); ++sample){
+            channelData[sample] = channelData[sample] * 0.5f;
+        }
+        
     }
 }
 

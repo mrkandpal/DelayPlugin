@@ -50,6 +50,7 @@ public:
     void changeProgramName (int index, const juce::String& newName) override;
 
     //==============================================================================
+    //The following two functions will be used by the DAW to save and restore the plugin parameter values
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
