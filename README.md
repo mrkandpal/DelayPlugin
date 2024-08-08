@@ -14,7 +14,8 @@ Under development (kick started on 6 August, 2024)
 (To be filled later)
 
 ## Reflections and Takeaways
-(To be filled later)
+Throughout this project, I will notes and observations regarding JUCE development as comments in
+the code
 
 ## Release Notes
 (To be filled later)

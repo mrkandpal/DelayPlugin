@@ -57,4 +57,14 @@ public:
 private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DelayAudioProcessor)
+    
+    //Audio Processor Value Tree State Declarations
+    
+    //APVTS object, named apvts. This is initiliased using a constructor
+    
+    juce::AudioProcessorValueTreeState apvts{
+        *this, nullptr, "Parameters", createParameterLayout()
+    };
+    
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 };
