@@ -191,3 +191,19 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new DelayAudioProcessor();
 }
+//==============================================================================
+//Function to create parameters
+juce::AudioProcessorValueTreeState::ParameterLayout DelayAudioProcessor::createParameterLayout(){
+    
+    //Create a variable named layout of the same return type as this function
+    juce::AudioProcessorValueTreeState::ParameterLayout layout;
+    
+    //use ParameterLayout.add() to add parameters
+    layout.add(std::make_unique<juce::AudioParameterFloat>(
+        juce::ParameterID{"gain", 1}, //identifier //object, initialised using constructor
+        "Output Gain", //parameter name
+        juce::NormalisableRange<float>{12.0f, -12.0f}, //range of paramter values
+        0.0f));//default vlaue of parameter
+    
+    return layout;
+}
