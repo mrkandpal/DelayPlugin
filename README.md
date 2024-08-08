@@ -10,11 +10,14 @@ the knowledge I acquire through this endeavour in audio programming.
 ## Project Status
 Under development (kick started on 6 August, 2024)
 
+## Testing Environment (Using audiopluginhost)
+(Coming Soon)
+
 ## Installation and Setup
-(To be filled later)
+(Coming Soon)
 
 ## Reflections and Takeaways
-(To be filled later)
+(Coming Soon)
 
 ## Release Notes
-(To be filled later)
+(Coming Soon)
